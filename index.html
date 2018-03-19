@@ -139,10 +139,8 @@
         $(window).resize(function () {
           var h = $(window).height(),
             offsetTop = 105; // Calculate the top offset
-
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
-
         // IMPORTANT: Edit below to insert your data. See details Google Fusion Templates section in http://DataVizForAll.org
         // fusionTableId -- go to your Google Fusion Table, File > About this table, then select and use right-click to copy
         // googleApiKey -- click Get a Key at https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key
@@ -157,35 +155,27 @@
             map_center:         [41.76, -72.69],
             locationScope:      "Connecticut"
           });
-
           var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
-
           $(':checkbox').click(function(){
             myMap.doSearch();
           });
-
           $(':radio').click(function(){
             myMap.doSearch();
           });
-
           $('#search_radius').change(function(){
             myMap.doSearch();
           });
-
           $('#search').click(function(){
             myMap.doSearch();
           });
-
           $('#find_me').click(function(){
             myMap.findMe();
             return false;
           });
-
           $('#reset').click(function(){
             myMap.reset();
             return false;
           });
-
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key === 13) {
