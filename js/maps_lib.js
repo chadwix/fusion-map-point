@@ -18,7 +18,7 @@
         // name of the location column in your Fusion Table.
         // NOTE: if your location column name has spaces in it, surround it with single quotes
         // example: locationColumn:     "'my location'",
-        this.locationColumn = options.locationColumn || "geometry";
+        this.locationColumn = options.locationColumn || "'Full Location'";
 
         // appends to all address searches if not present
         this.locationScope = options.locationScope || "";
@@ -167,11 +167,11 @@
         // EDIT type_column and numbers to match your Google Fusion Table points AND index.html
         var type_column = "'TypeNum'";
         var searchType = type_column + " IN (-1,";
-        if ( $("#cbType1").is(':checked')) searchType += "1,";
-        if ( $("#cbType2").is(':checked')) searchType += "2,";
-        if ( $("#cbType3").is(':checked')) searchType += "3,";
-        if ( $("#cbType4").is(':checked')) searchType += "4,";
-        if ( $("#cbType5").is(':checked')) searchType += "5,";
+        if ( $("#cbType1").is(':checked')) searchType += "ASW FIDDLER BOURBON UNISON,";
+        if ( $("#cbType2").is(':checked')) searchType += "ASW RESURGENS RYE,";
+        if ( $("#cbType3").is(':checked')) searchType += "ASW DUALITY DOUBLE MELT,";
+        if ( $("#cbType4").is(':checked')) searchType += "ASW AMEIREAGANACH HUDDLED MASHES,";
+        if ( $("#cbType5").is(':checked')) searchType += "AMERICAN SPIRIT WHISKEY,";
         self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
 
         // TEXTUAL OPTION to filter checkboxes by text type
